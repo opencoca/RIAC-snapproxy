@@ -4,6 +4,8 @@
                       "FROM node:buster-slim",
                       "RUN apt-get update && apt-get upgrade",
                       "RUN npm install -g json-caching-proxy",
+                      "RUN mkdir -p /data",
+                      "WORKDIR /data",
                       "ADD run.sh /run.sh",
                       "RUN chmod +x /run.sh",
                       "EXPOSE 80",
